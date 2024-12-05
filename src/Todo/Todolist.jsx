@@ -15,6 +15,18 @@ const Todolist = () => {
     setInput("");
   };
 
+  // Edit Task
+  const editTask = (id) => {
+    const newTask = prompt("Edit your task:");
+    if (newTask) {
+      setTasks(
+        tasks.map((task) =>
+          task.id === id ? { ...task, text: newTask.trim() } : task
+        )
+      );
+    }
+  };
+
  
  
 
@@ -35,7 +47,9 @@ const Todolist = () => {
           <li key={task.id}>
             <span className="task-text">{task.text}</span>
            
-
+            <button className="edit-btn" onClick={() => editTask(task.id)}>
+              Edit
+            </button>
 
 
 
