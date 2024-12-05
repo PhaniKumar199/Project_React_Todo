@@ -27,6 +27,9 @@ const Todolist = () => {
     }
   };
 
+  const deleteTask = (id) => {
+    setTasks(tasks.filter((task) => task.id !== id));
+  };
  
  
 
@@ -50,7 +53,9 @@ const Todolist = () => {
             <button className="edit-btn" onClick={() => editTask(task.id)}>
               Edit
             </button>
-
+            <button className="delete-btn" onClick={() => deleteTask(task.id)}>
+              Delete
+            </button>
 
 
           </li>
